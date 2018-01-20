@@ -1,4 +1,4 @@
-require_relative '../lib/fizz_buzz'
+require_relative './lib/fizz_buzz'
 
 describe "method fizz_buzz" do
   it "正常系" do
@@ -9,6 +9,5 @@ describe "method fizz_buzz" do
     expect(fizz_buzz(5)).to eq('Buzz')
     expect(fizz_buzz(6)).to eq('Fizz')
     expect(fizz_buzz(15)).to eq('Fizz Buzz')
-    expect(fizz_buzz(16)).to eq('Fizz Buzz')
   end
 end
