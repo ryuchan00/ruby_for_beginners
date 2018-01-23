@@ -17,10 +17,24 @@ describe 'gate' do
   end
 
   context '梅田から三国まで' do
+    it '改札を出場できる' do
+      ticket = Ticket.new(190)
+      @umeda.enter(ticket)
+      expect(@mikuni.exit(ticket)).to be_truthy
+    end
+
     it '改札を出場できない' do
       ticket = Ticket.new(150)
       @umeda.enter(ticket)
       expect(@mikuni.exit(ticket)).to be_falsey
+    end
+  end
+
+  context '十三から三国まで' do
+    it '改札を出場できる' do
+      ticket = Ticket.new(150)
+      @juso.enter(ticket)
+      expect(@mikuni.exit(ticket)).to be_truthy
     end
   end
 end
