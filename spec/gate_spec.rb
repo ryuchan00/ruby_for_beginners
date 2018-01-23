@@ -8,7 +8,7 @@ describe 'gate' do
       juso = Gate.new(:juso)
 
       ticket = Ticket.new(150)
-      umeda.enter('ticket')
+      umeda.enter(ticket)
       expect(juso.exit(ticket)).to be_truthy
       # クラスが存在するかの確認は、以下のコードで可能
       # expect(Gate.new).to be_truthy
