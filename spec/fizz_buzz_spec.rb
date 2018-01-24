@@ -1,4 +1,4 @@
-require_relative './lib/fizz_buzz'
+require_relative '../lib/fizz_buzz'
 
 describe "method fizz_buzz" do
   it "正常系" do
