@@ -1,7 +1,7 @@
 require_relative '../lib/convert_hash_syntax'
 
-describe 'convert_hash_syntax' do
-  it '正常' do
+describe 'test_convert_hash_syntax' do
+  it '=>が:に置き換わる' do
     old_syntax = <<~TEXT
     {
       :name => 'Alice',
