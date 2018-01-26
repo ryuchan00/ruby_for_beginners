@@ -1,7 +1,9 @@
 # 8.3 モジュールのミックスイン
-# ログ出力用のメソッドを提供するモジュール
-# 「ログ出力できる(log + able)」という意味でLoggableという名前をつけた
+# モジュールをprivateにする
 module Loggable
+
+  private
+
   def log(text)
     puts "[LOG] #{text}"
   end
@@ -31,6 +33,7 @@ end
 
 product = Product.new
 p product.title
+p product.log 'public?'
 
 user = User.new
 p user.name
