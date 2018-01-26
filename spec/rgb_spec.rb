@@ -1,6 +1,6 @@
 require_relative '../lib/rgb'
 
-describe 'test_to_hex' do
+describe 'to_hex' do
   context 'r,g,bそれぞれの値が同じ値' do
     it '16進数に変換されたカラーコードが返却される' do
       expect(to_hex(0, 0, 0)).to eq('#000000')
@@ -14,7 +14,7 @@ describe 'test_to_hex' do
   end
 end
 
-describe 'test_to_ints' do
+describe 'to_ints' do
   context 'r,g,bそれぞれの値が同じ値' do
     it '10進数に変換されたカラーコードが返却される' do
       expect(to_ints('#000000')).to eq([0, 0, 0])

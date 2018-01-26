@@ -1,6 +1,6 @@
 require_relative '../lib/convert_hash_syntax'
 
-describe 'test_convert_hash_syntax' do
+describe 'convert_hash_syntax' do
   old_syntax = <<~TEXT
     {
       :name => 'Alice',

@@ -1,6 +1,6 @@
 require_relative '../lib/convert_length'
 
-describe 'test_convert_length' do
+describe 'convert_length' do
   context 'fromがメートル、toがインチの場合' do
     it 'メートルからインチに変換できる' do
       expect(convert_length(1, from: :m, to: :in)).to eq(39.37)

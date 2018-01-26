@@ -1,4 +1,4 @@
-require_relative '../hello'
+require_relative '../sample/hello'
 
 describe "挨拶" do
   it "ハロー" do

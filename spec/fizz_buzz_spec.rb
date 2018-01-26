@@ -1,6 +1,6 @@
 require_relative '../lib/fizz_buzz'
 
-describe 'test_fizz_buzz' do
+describe 'fizz_buzz' do
   context '3または5の倍数ではない数字が引数の場合' do
     it '引数が返却される' do
       expect(fizz_buzz(1)).to eq('1')
