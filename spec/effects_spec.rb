@@ -23,7 +23,7 @@ describe 'echo' do
     let(:effect) { Effects.echo(3) }
 
     it '各文字が3回づつ繰り返される' do
-      expect(effect_echo).to eq('RRRuyubbbyyy iiisss fffuuunnn!!!')
+      expect(effect_echo).to eq('RRRuuubbbyyy iiisss fffuuunnn!!!')
     end
   end
 end
