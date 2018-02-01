@@ -4,7 +4,7 @@ describe 'reverse' do
   let(:effect) { Effects.reverse }
   subject(:effect_reverse) { effect.call('Ruby is fun!') }
 
-  it '文字列がシャッフルされる' do
+  it '文字列が反転する' do
     expect(effect_reverse).to eq('ybuR si !nuf')
   end
 end
