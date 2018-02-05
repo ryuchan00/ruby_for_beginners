@@ -16,7 +16,7 @@ describe 'echo' do
   context '引数が2の場合' do
     let(:arg) { 2 }
 
-    it '各文字が2回づつ繰り返される' do
+    it '各文字が2回ずつ繰り返される' do
       expect(effect_echo).to eq('RRuubbyy iiss ffuunn!!')
     end
   end
@@ -24,7 +24,7 @@ describe 'echo' do
   context '引数が3の場合' do
     let(:arg) { 3 }
 
-    it '各文字が3回づつ繰り返される' do
+    it '各文字が3回ずつ繰り返される' do
       expect(effect_echo).to eq('RRRuuubbbyyy iiisss fffuuunnn!!!')
     end
   end
