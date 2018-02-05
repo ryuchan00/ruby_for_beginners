@@ -28,6 +28,7 @@ describe 'deep_freeze_to_hash' do
         'US' => 'dollar',
         'India' => 'rupee'
     } }
+
     it '正しい' do
       expect(Bank::CURRENCIES).to eq(currencies)
     end
