@@ -2,39 +2,45 @@ require_relative '../lib/gate'
 require_relative '../lib/ticket'
 
 describe 'gate' do
-  before do
-    @umeda = Gate.new(:umeda)
-    @juso = Gate.new(:juso)
-    @mikuni = Gate.new(:mikuni)
-  end
+  let(:umeda) { Gate.new(:umeda) }
+  let(:juso) { Gate.new(:juso) }
+  let(:mikuni) { Gate.new(:mikuni) }
+  let(:ticket) { Ticket.new(fare) }
 
-  context '梅田から十三まで' do
-    it '改札を出場できる' do
-      ticket = Ticket.new(150)
-      @umeda.enter(ticket)
-      expect(@juso.exit(ticket)).to be_truthy
-    end
-  end
-
-  context '梅田から三国まで' do
-    it '改札を出場できる' do
-      ticket = Ticket.new(190)
-      @umeda.enter(ticket)
-      expect(@mikuni.exit(ticket)).to be_truthy
+  describe '梅田から' do
+    before do
+      umeda.enter(ticket)
     end
 
-    it '改札を出場できない' do
-      ticket = Ticket.new(150)
-      @umeda.enter(ticket)
-      expect(@mikuni.exit(ticket)).to be_falsey
+    context '十三まで' do
+      let(:fare) { 150 }
+
+      it { expect(juso.exit(ticket)).to be_truthy }
+    end
+
+    context '三国まで' do
+      context '運賃が足りている' do
+        let(:fare) { 190 }
+
+        it { expect(mikuni.exit(ticket)).to be_truthy }
+
+      end
+
+      context '運賃が足りていない' do
+        let(:fare) { 150 }
+
+        it { expect(mikuni.exit(ticket)).to be_falsey }
+      end
     end
   end
 
   context '十三から三国まで' do
-    it '改札を出場できる' do
-      ticket = Ticket.new(150)
-      @juso.enter(ticket)
-      expect(@mikuni.exit(ticket)).to be_truthy
+    let(:fare) { 150 }
+
+    before do
+      juso.enter(ticket)
     end
+
+    it { expect(mikuni.exit(ticket)).to be_truthy }
   end
 end
