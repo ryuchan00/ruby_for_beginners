@@ -34,3 +34,26 @@ end
 # 通貨が見つかる場合と見つからない場合の結果を確認
 p show_currency(:japan) # => "YEN"
 p show_currency(:brazil) # => nil
+
+# 引数はメソッドが呼び出された場合のみ評価されます。
+class Foo
+  def foo(str = "foo")
+    puts str
+  end
+end
+
+# def foo(str = "foo")
+#   puts str
+# end
+
+def bar
+  'bar'
+end
+
+# barば実行される
+obj = Foo.new
+obj&.foo(bar)
+
+# barは実行されない
+obj = nil
+obj&.foo(bar)
